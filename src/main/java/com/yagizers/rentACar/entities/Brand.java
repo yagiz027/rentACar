@@ -1,32 +1,25 @@
 package com.yagizers.rentACar.entities;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Table(name = "BrandsTable")
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Brand {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="brandId")
     private int brandId;
 
+    @Column(name = "brandName")
     private String brandName;
 
-    public Brand(int brandId, String brandName) {
-        this.brandId = brandId;
-        this.brandName = brandName;
-    }
-
-    public Brand() {
-    }
-
-    public int getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(int brandId) {
-        this.brandId = brandId;
-    }
-
-    public String getBrandName() {
-        return brandName;
-    }
-
-    public void setBrandName(String brandName) {
-        this.brandName = brandName;
-    }
 }
