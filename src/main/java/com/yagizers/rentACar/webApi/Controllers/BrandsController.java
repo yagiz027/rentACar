@@ -4,10 +4,8 @@ import com.yagizers.rentACar.business.Abstracts.BrandService;
 import com.yagizers.rentACar.business.dtos.requests.CreateBrandRequest;
 import com.yagizers.rentACar.business.dtos.responses.GetAllBrandsResponse;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,12 +15,13 @@ import java.util.List;
 public class BrandsController {
     private BrandService brandService;
 
-    @GetMapping("/selectAll")
+    @GetMapping()
     public List<GetAllBrandsResponse> selectAllBrands()    {
         return brandService.selectAllBrands();
     }
 
-    @PostMapping("/addBrand")
+    @PostMapping()
+    @ResponseStatus(HttpStatus.CREATED) //Code:201 nesne oluşturuldu.
     public void addBrand(CreateBrandRequest createBrandRequest){
         brandService.addBrand(createBrandRequest);
     }
