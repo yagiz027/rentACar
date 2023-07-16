@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Table(name = "models")
 @Entity
 @Getter
@@ -24,4 +26,7 @@ public class Model {
     @ManyToOne
     @JoinColumn(name="brandId")
     private Brand brand;
+
+    @OneToMany(mappedBy = "model")
+    private List<Car> cars;
 }

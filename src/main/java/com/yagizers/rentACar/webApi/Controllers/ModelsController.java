@@ -1,8 +1,8 @@
 package com.yagizers.rentACar.webApi.Controllers;
 
 import com.yagizers.rentACar.business.Abstracts.ModelService;
-import com.yagizers.rentACar.business.dtos.requests.modelRequests.CreateModelRequest;
-import com.yagizers.rentACar.business.dtos.requests.modelRequests.UpdateModelRequest;
+import com.yagizers.rentACar.business.dtos.requests.model.CreateModelRequest;
+import com.yagizers.rentACar.business.dtos.requests.model.UpdateModelRequest;
 import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetAllModelResponse;
 import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetByIdModelResponse;
 import lombok.AllArgsConstructor;

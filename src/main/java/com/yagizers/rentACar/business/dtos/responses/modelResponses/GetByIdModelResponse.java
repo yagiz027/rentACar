@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetByIdModelResponse {
     private String modelName;
-    private int brandId;
+    private String brandName;
 }

@@ -1,8 +1,8 @@
 package com.yagizers.rentACar.webApi.Controllers;
 
 import com.yagizers.rentACar.business.Abstracts.BrandService;
-import com.yagizers.rentACar.business.dtos.requests.brandRequests.CreateBrandRequest;
-import com.yagizers.rentACar.business.dtos.requests.brandRequests.UpdateBrandRequest;
+import com.yagizers.rentACar.business.dtos.requests.brand.CreateBrandRequest;
+import com.yagizers.rentACar.business.dtos.requests.brand.UpdateBrandRequest;
 import com.yagizers.rentACar.business.dtos.responses.brandResponses.GetAllBrandsResponse;
 import com.yagizers.rentACar.business.dtos.responses.brandResponses.GetByIdBrandResponse;
 import lombok.AllArgsConstructor;

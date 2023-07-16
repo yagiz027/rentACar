@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.business.dtos.requests.brandRequests;
+package com.yagizers.rentACar.business.dtos.requests.brand;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

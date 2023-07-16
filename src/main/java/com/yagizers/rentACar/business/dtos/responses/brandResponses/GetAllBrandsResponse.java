@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetAllBrandsResponse {
     private int brandId;
-    private String brandName;
+    private String name;
 }

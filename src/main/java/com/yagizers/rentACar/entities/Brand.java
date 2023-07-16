@@ -21,9 +21,9 @@ public class Brand {
     @Column(name="brandId")
     private int brandId;
 
-    @Column(name = "brandName")
-    private String brandName;
+    @Column(name = "name")
+    private String name;
 
     @OneToMany(mappedBy = "brand")
-    List<Model> models;
+    private List<Model> models;
 }

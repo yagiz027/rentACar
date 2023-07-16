@@ -1,7 +1,7 @@
 package com.yagizers.rentACar.business.Abstracts;
 
-import com.yagizers.rentACar.business.dtos.requests.modelRequests.CreateModelRequest;
-import com.yagizers.rentACar.business.dtos.requests.modelRequests.UpdateModelRequest;
+import com.yagizers.rentACar.business.dtos.requests.model.CreateModelRequest;
+import com.yagizers.rentACar.business.dtos.requests.model.UpdateModelRequest;
 import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetAllModelResponse;
 import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetByIdModelResponse;
 
