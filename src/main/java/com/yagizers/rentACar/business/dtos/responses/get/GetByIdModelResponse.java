@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.business.dtos.responses.modelResponses;
+package com.yagizers.rentACar.business.dtos.responses.get;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

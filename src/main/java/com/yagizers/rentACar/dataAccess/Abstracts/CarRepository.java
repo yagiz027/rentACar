@@ -7,4 +7,6 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
     boolean existsByPlate(String carPlate);
 
     Car findByPlate(String plate);
+
+    boolean findStateById(int id);
 }

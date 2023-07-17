@@ -1,10 +1,10 @@
 package com.yagizers.rentACar.webApi.Controllers;
 
 import com.yagizers.rentACar.business.Abstracts.ModelService;
-import com.yagizers.rentACar.business.dtos.requests.model.CreateModelRequest;
-import com.yagizers.rentACar.business.dtos.requests.model.UpdateModelRequest;
-import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetAllModelResponse;
-import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetByIdModelResponse;
+import com.yagizers.rentACar.business.dtos.requests.create.CreateModelRequest;
+import com.yagizers.rentACar.business.dtos.requests.update.UpdateModelRequest;
+import com.yagizers.rentACar.business.dtos.responses.get.GetAllModelResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetByIdModelResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

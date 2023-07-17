@@ -1,9 +1,9 @@
 package com.yagizers.rentACar.business.Abstracts;
 
-import com.yagizers.rentACar.business.dtos.requests.Invoice.CreateInvoiceRequest;
-import com.yagizers.rentACar.business.dtos.requests.Invoice.UpdateInvoiceRequest;
-import com.yagizers.rentACar.business.dtos.responses.InvoiceResponses.GetAllInvoicesesResponse;
-import com.yagizers.rentACar.business.dtos.responses.InvoiceResponses.GetByIdInvoiceResponse;
+import com.yagizers.rentACar.business.dtos.requests.create.CreateInvoiceRequest;
+import com.yagizers.rentACar.business.dtos.requests.update.UpdateInvoiceRequest;
+import com.yagizers.rentACar.business.dtos.responses.get.GetAllInvoicesesResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetByIdInvoiceResponse;
 
 import java.util.List;
 

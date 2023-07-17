@@ -1,10 +1,10 @@
 package com.yagizers.rentACar.webApi.Controllers;
 
 import com.yagizers.rentACar.business.Abstracts.InvoiceService;
-import com.yagizers.rentACar.business.dtos.requests.Invoice.CreateInvoiceRequest;
-import com.yagizers.rentACar.business.dtos.requests.Invoice.UpdateInvoiceRequest;
-import com.yagizers.rentACar.business.dtos.responses.InvoiceResponses.GetAllInvoicesesResponse;
-import com.yagizers.rentACar.business.dtos.responses.InvoiceResponses.GetByIdInvoiceResponse;
+import com.yagizers.rentACar.business.dtos.requests.create.CreateInvoiceRequest;
+import com.yagizers.rentACar.business.dtos.requests.update.UpdateInvoiceRequest;
+import com.yagizers.rentACar.business.dtos.responses.get.GetAllInvoicesesResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetByIdInvoiceResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

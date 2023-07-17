@@ -1,6 +1,9 @@
-package com.yagizers.rentACar.business.dtos.requests.Invoice;
+package com.yagizers.rentACar.business.dtos.responses.update;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
@@ -8,13 +11,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UpdateInvoiceRequest {
+public class UpdateInvoiceRespone {
+    private int id;
     private String cardHolder;
     private String modelName;
     private String brandName;
     private String plate;
     private int modelYear;
     private double dailyPrice;
+    private double totalPrice;
     private int rentedForDays;
     private LocalDateTime rentedAt;
 }

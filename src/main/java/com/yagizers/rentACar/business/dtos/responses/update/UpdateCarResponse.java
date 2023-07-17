@@ -1,13 +1,15 @@
-package com.yagizers.rentACar.business.dtos.responses.car;
+package com.yagizers.rentACar.business.dtos.responses.update;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class GetCarByPlateResponse {
+@NoArgsConstructor
+@Getter
+@Setter
+public class UpdateCarResponse {
     private int id;
     private String plate;
     private double dailyPrice;

@@ -1,10 +1,10 @@
 package com.yagizers.rentACar.webApi.Controllers;
 
 import com.yagizers.rentACar.business.Abstracts.BrandService;
-import com.yagizers.rentACar.business.dtos.requests.brand.CreateBrandRequest;
-import com.yagizers.rentACar.business.dtos.requests.brand.UpdateBrandRequest;
-import com.yagizers.rentACar.business.dtos.responses.brandResponses.GetAllBrandsResponse;
-import com.yagizers.rentACar.business.dtos.responses.brandResponses.GetByIdBrandResponse;
+import com.yagizers.rentACar.business.dtos.requests.create.CreateBrandRequest;
+import com.yagizers.rentACar.business.dtos.requests.update.UpdateBrandRequest;
+import com.yagizers.rentACar.business.dtos.responses.get.GetAllBrandsResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetByIdBrandResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -40,9 +40,9 @@ public class BrandsController {
 
     //Update işlemleri PutMapping kullanılarak yapılır.
     // Ancak PostMapping kullanılarak da yapılabililr.
-    @PutMapping
-    public void updateBrand(@RequestBody  UpdateBrandRequest updateBrandRequest){
-        this.brandService.updateBrand(updateBrandRequest);
+    @PutMapping("/{brandId}")
+    public void updateBrand(@PathVariable int brandId,@RequestBody  UpdateBrandRequest updateBrandRequest){
+        this.brandService.updateBrand(brandId,updateBrandRequest);
     }
 
     //Delete işlemleri için DeleteMapping annotation'ı kullanılır.

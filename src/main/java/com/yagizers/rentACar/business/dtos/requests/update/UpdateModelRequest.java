@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.business.dtos.requests.model;
+package com.yagizers.rentACar.business.dtos.requests.update;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

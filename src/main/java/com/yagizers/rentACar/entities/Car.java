@@ -16,7 +16,6 @@ import lombok.Setter;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
     private int id;
 
     @Column(name="plate", unique = true) // unique constraint

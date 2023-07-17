@@ -1,15 +1,14 @@
-package com.yagizers.rentACar.business.dtos.responses.InvoiceResponses;
+package com.yagizers.rentACar.business.dtos.requests.update;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllInvoicesesResponse {
-    private int id;
+@Getter
+@Setter
+public class UpdateInvoiceRequest {
     private String cardHolder;
     private String modelName;
     private String brandName;

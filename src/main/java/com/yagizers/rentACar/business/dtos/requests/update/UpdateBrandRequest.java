@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.business.dtos.responses.modelResponses;
+package com.yagizers.rentACar.business.dtos.requests.update;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllModelResponse {
-    private int modelId;
-    private String modelName;
+public class UpdateBrandRequest {
+    private int brandId;
     private String brandName;
 }

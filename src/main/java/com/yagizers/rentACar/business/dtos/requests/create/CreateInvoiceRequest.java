@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.business.dtos.requests.Invoice;
+package com.yagizers.rentACar.business.dtos.requests.create;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

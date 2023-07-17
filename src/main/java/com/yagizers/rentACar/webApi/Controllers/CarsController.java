@@ -1,11 +1,14 @@
 package com.yagizers.rentACar.webApi.Controllers;
 
 import com.yagizers.rentACar.business.Abstracts.CarService;
-import com.yagizers.rentACar.business.dtos.requests.car.CreateCarRequest;
-import com.yagizers.rentACar.business.dtos.requests.car.UpdateCarRequest;
-import com.yagizers.rentACar.business.dtos.responses.car.GetAllCarResponse;
-import com.yagizers.rentACar.business.dtos.responses.car.GetCarByIdResponse;
-import com.yagizers.rentACar.business.dtos.responses.car.GetCarByPlateResponse;
+import com.yagizers.rentACar.business.dtos.requests.create.CreateCarRequest;
+import com.yagizers.rentACar.business.dtos.requests.update.UpdateCarRequest;
+import com.yagizers.rentACar.business.dtos.responses.create.CreateCarResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetAllCarResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetCarByIdResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetCarByPlateResponse;
+import com.yagizers.rentACar.business.dtos.responses.update.UpdateCarResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,25 +23,25 @@ public class CarsController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void addCar(CreateCarRequest carRequest){
-        this.carService.addCar(carRequest);
+    public CreateCarResponse addCar(@RequestBody @Valid CreateCarRequest carRequest){
+        return this.carService.addCar(carRequest);
     }
 
     @GetMapping()
     public List<GetAllCarResponse> selectAllCars(){
         return this.carService.selectAllCars();
     }
-    @PutMapping
-    public void updateCar(UpdateCarRequest updateCarRequest){
-        this.carService.updateCar(updateCarRequest);
+    @PutMapping("/{id}")
+    public UpdateCarResponse updateCar(@PathVariable int id, @RequestBody UpdateCarRequest updateCarRequest){
+        return this.carService.updateCar(id,updateCarRequest);
     }
-    @GetMapping("/{carId}")
-    public GetCarByIdResponse getCarById(@PathVariable int carId){
-        return this.carService.getCarById(carId);
+    @GetMapping("/{id}")
+    public GetCarByIdResponse getCarById(@PathVariable int id){
+        return this.carService.getCarById(id);
     }
-    @GetMapping("/{carPlate}")
-    public GetCarByPlateResponse getCarByPlate(@PathVariable String carPlate){
-        return this.carService.getCarByPlate(carPlate);
+    @GetMapping("/{plate}")
+    public GetCarByPlateResponse getCarByPlate(@PathVariable String plate){
+        return this.carService.getCarByPlate(plate);
     }
 
     @DeleteMapping("/{carId}")

@@ -1,10 +1,10 @@
 package com.yagizers.rentACar.business.Concretes;
 
 import com.yagizers.rentACar.business.Abstracts.ModelService;
-import com.yagizers.rentACar.business.dtos.requests.model.CreateModelRequest;
-import com.yagizers.rentACar.business.dtos.requests.model.UpdateModelRequest;
-import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetAllModelResponse;
-import com.yagizers.rentACar.business.dtos.responses.modelResponses.GetByIdModelResponse;
+import com.yagizers.rentACar.business.dtos.requests.create.CreateModelRequest;
+import com.yagizers.rentACar.business.dtos.requests.update.UpdateModelRequest;
+import com.yagizers.rentACar.business.dtos.responses.get.GetAllModelResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetByIdModelResponse;
 import com.yagizers.rentACar.core.utilities.mappers.ModelMapperService;
 import com.yagizers.rentACar.dataAccess.Abstracts.ModelRepository;
 import com.yagizers.rentACar.entities.Model;

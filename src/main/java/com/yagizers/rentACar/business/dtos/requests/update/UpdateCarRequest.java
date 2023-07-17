@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.business.dtos.requests.car;
+package com.yagizers.rentACar.business.dtos.requests.update;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -10,17 +10,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CreateCarRequest {
-    @NotNull
-    @NotBlank
+@NotNull
+@NotBlank
+public class UpdateCarRequest {
     @Size(min=6,max=9)
-    private String plate;
-    @NotBlank
+    private String carPlate;
     private double dailyPrice;
-    @NotBlank
     private int modelYear;
-    @NotBlank
     private String state;
-    @NotBlank
     private int modelId;
 }

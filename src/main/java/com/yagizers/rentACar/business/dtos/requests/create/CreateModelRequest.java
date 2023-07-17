@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.business.dtos.requests.model;
+package com.yagizers.rentACar.business.dtos.requests.create;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
