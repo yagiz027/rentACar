@@ -3,8 +3,10 @@ package com.yagizers.rentACar.webApi.Controllers;
 import com.yagizers.rentACar.business.Abstracts.BrandService;
 import com.yagizers.rentACar.business.dtos.requests.create.CreateBrandRequest;
 import com.yagizers.rentACar.business.dtos.requests.update.UpdateBrandRequest;
+import com.yagizers.rentACar.business.dtos.responses.create.CreateBrandResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetAllBrandsResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetByIdBrandResponse;
+import com.yagizers.rentACar.business.dtos.responses.update.UpdateBrandResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +26,8 @@ public class BrandsController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED) //Code:201 nesne oluşturuldu.
-    public void addBrand(CreateBrandRequest createBrandRequest){
-        this.brandService.addBrand(createBrandRequest);
+    public CreateBrandResponse addBrand(CreateBrandRequest createBrandRequest){
+        return this.brandService.addBrand(createBrandRequest);
     }
 
 
@@ -41,8 +43,8 @@ public class BrandsController {
     //Update işlemleri PutMapping kullanılarak yapılır.
     // Ancak PostMapping kullanılarak da yapılabililr.
     @PutMapping("/{brandId}")
-    public void updateBrand(@PathVariable int brandId,@RequestBody  UpdateBrandRequest updateBrandRequest){
-        this.brandService.updateBrand(brandId,updateBrandRequest);
+    public UpdateBrandResponse updateBrand(@PathVariable int brandId, @RequestBody  UpdateBrandRequest updateBrandRequest){
+       return this.brandService.updateBrand(brandId,updateBrandRequest);
     }
 
     //Delete işlemleri için DeleteMapping annotation'ı kullanılır.

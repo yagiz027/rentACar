@@ -3,8 +3,10 @@ package com.yagizers.rentACar.business.Concretes;
 import com.yagizers.rentACar.business.Abstracts.ModelService;
 import com.yagizers.rentACar.business.dtos.requests.create.CreateModelRequest;
 import com.yagizers.rentACar.business.dtos.requests.update.UpdateModelRequest;
+import com.yagizers.rentACar.business.dtos.responses.create.CreateModelResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetAllModelResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetByIdModelResponse;
+import com.yagizers.rentACar.business.dtos.responses.update.UpdateModelResponse;
 import com.yagizers.rentACar.core.utilities.mappers.ModelMapperService;
 import com.yagizers.rentACar.dataAccess.Abstracts.ModelRepository;
 import com.yagizers.rentACar.entities.Model;
@@ -36,9 +38,15 @@ public class ModelManager implements ModelService {
     }
 
     @Override
-    public void addModel(CreateModelRequest createModelRequest) {
+    public CreateModelResponse addModel(CreateModelRequest createModelRequest) {
         Model model=this.modelMapperService.forRequest().map(createModelRequest,Model.class);
+
+        model.setModelId(0);
         this.modelRepository.save(model);
+
+        CreateModelResponse response=this.modelMapperService.forResponse().map(model,CreateModelResponse.class);
+
+        return response;
     }
 
     @Override
@@ -47,8 +55,14 @@ public class ModelManager implements ModelService {
     }
 
     @Override
-    public void updateModel(UpdateModelRequest updateModelRequest) {
+    public UpdateModelResponse updateModel(int id,UpdateModelRequest updateModelRequest) {
         Model updatedModel=this.modelMapperService.forRequest().map(updateModelRequest,Model.class);
+
+        updatedModel.setModelId(id);
         this.modelRepository.save(updatedModel);
+
+        UpdateModelResponse response=this.modelMapperService.forResponse().map(updatedModel,UpdateModelResponse.class);
+
+        return response;
     }
 }

@@ -34,9 +34,9 @@ public class ModelsController {
         this.modelService.addModel(createModelRequest);
     }
 
-    @PutMapping
-    public void updateModel(@RequestBody UpdateModelRequest updateModelRequest){
-        this.modelService.updateModel(updateModelRequest);
+    @PutMapping("/{modelId}")
+    public void updateModel(@PathVariable int modelId,@RequestBody UpdateModelRequest updateModelRequest){
+        this.modelService.updateModel(modelId,updateModelRequest);
     }
 
     @DeleteMapping("/{modelId}")

@@ -20,8 +20,8 @@ public class Model {
     @Column(name="modelId")
     private int modelId;
 
-    @Column(name="modelName")
-    private String modelName;
+    @Column(name="name")
+    private String name;
 
     @ManyToOne
     @JoinColumn(name="brandId")

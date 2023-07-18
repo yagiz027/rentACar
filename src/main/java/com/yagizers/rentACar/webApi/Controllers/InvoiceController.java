@@ -33,9 +33,9 @@ public class InvoiceController {
         this.invoiceService.addInvoice(createInvoiceRequest);
     }
 
-    @PutMapping
-    public void updateInvoice(@RequestBody UpdateInvoiceRequest requests){
-        this.invoiceService.updateInvoice(requests);
+    @PutMapping("/{invoiceId}")
+    public void updateInvoice(@PathVariable int invoiceId,@RequestBody UpdateInvoiceRequest requests){
+        this.invoiceService.updateInvoice(invoiceId,requests);
     }
 
     @DeleteMapping("/{invoiceId}")

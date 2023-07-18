@@ -5,7 +5,7 @@ import com.yagizers.rentACar.business.dtos.requests.create.CreateCarRequest;
 import com.yagizers.rentACar.business.dtos.requests.update.UpdateCarRequest;
 import com.yagizers.rentACar.business.dtos.responses.create.CreateCarResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetAllCarResponse;
-import com.yagizers.rentACar.business.dtos.responses.get.GetCarByIdResponse;
+import com.yagizers.rentACar.business.dtos.responses.get.GetCarResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetCarByPlateResponse;
 import com.yagizers.rentACar.business.dtos.responses.update.UpdateCarResponse;
 import com.yagizers.rentACar.business.rules.CarBusinessRules;
@@ -13,7 +13,6 @@ import com.yagizers.rentACar.core.utilities.mappers.ModelMapperService;
 import com.yagizers.rentACar.dataAccess.Abstracts.CarRepository;
 import com.yagizers.rentACar.entities.Car;
 import lombok.AllArgsConstructor;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -63,15 +62,16 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public GetCarByIdResponse getCarById(int carId) {
-        this.carBusinessRules.checkIfCarExists(carId);
+    public GetCarResponse getCarById(int carId) {
+        this.carBusinessRules.checkIfCarNotExists(carId);
         Car car=this.carRepository.findById(carId).orElseThrow();
-        return this.modelMapperService.forResponse().map(car,GetCarByIdResponse.class);
+        GetCarResponse response=this.modelMapperService.forResponse().map(car, GetCarResponse.class);
+        return response;
     }
 
     @Override
     public GetCarByPlateResponse getCarByPlate(String carPlate) {
-        this.carBusinessRules.checkIfCarPlateExists(carPlate);
+        this.carBusinessRules.checkIfCarPlateNotExists(carPlate);
         Car car=this.carRepository.findByPlate(carPlate);
         return this.modelMapperService.forResponse().map(car,GetCarByPlateResponse.class);
     }

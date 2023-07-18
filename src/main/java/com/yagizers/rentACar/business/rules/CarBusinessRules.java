@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class CarBusinessRules {
     private final CarRepository carRepository;
-    public void checkIfCarExists(int id){
+    public void checkIfCarNotExists(int id){
         if(!carRepository.existsById(id)){
             throw new BussinessException(ExceptionMessages.Car.NotExists);
         }
     }
-    public void checkIfCarPlateExists(String plate){
-        if (carRepository.existsByPlate(plate)){
-            throw new BussinessException(ExceptionMessages.Car.AlreadyExists);
+    public void checkIfCarPlateNotExists(String plate){
+        if (!carRepository.existsByPlate(plate)){
+            throw new BussinessException(ExceptionMessages.Car.NotExists);
         }
     }
     public void checkIfCarNotAvailable(int id){
