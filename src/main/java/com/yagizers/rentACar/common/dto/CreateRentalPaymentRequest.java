@@ -1,6 +1,6 @@
 package com.yagizers.rentACar.common.dto;
 
-import com.yagizers.rentACar.business.dtos.requests.create.CreatePaymentRequest;
+import com.yagizers.rentACar.business.dtos.requests.RestrictedPaymentRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CreateRentalPaymentRequest extends CreatePaymentRequest {
+public class CreateRentalPaymentRequest extends RestrictedPaymentRequest {
     private double price;
 }
