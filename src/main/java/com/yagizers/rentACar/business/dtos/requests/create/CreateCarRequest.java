@@ -1,7 +1,7 @@
 package com.yagizers.rentACar.business.dtos.requests.create;
 
 import com.yagizers.rentACar.common.annotations.NotFutureYear;
-import com.yagizers.rentACar.constants.RegexConstraints;
+import com.yagizers.rentACar.common.constants.RegexConstraints;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

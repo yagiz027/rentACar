@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.constants;
+package com.yagizers.rentACar.common.constants;
 
 public class RegexConstraints {
     public class Regex {

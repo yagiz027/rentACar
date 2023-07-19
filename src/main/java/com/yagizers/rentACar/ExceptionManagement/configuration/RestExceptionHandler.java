@@ -1,9 +1,8 @@
 package com.yagizers.rentACar.ExceptionManagement.configuration;
 
-import com.yagizers.rentACar.ExceptionManagement.CommonExceptions.exceptionConstants.ExceptionTypes;
+import com.yagizers.rentACar.common.exceptionConstants.ExceptionTypes;
 import com.yagizers.rentACar.ExceptionManagement.exceptions.BussinessException;
 import com.yagizers.rentACar.ExceptionManagement.utilsOrResults.ExceptionResult;
-import jakarta.servlet.annotation.HttpConstraint;
 import org.modelmapper.ValidationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

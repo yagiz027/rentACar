@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@NotNull
-@NotBlank
 public class UpdateCarRequest {
     @Size(min=6,max=9)
     private String carPlate;

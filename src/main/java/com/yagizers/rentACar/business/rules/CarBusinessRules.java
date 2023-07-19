@@ -1,10 +1,9 @@
 package com.yagizers.rentACar.business.rules;
 
 import com.yagizers.rentACar.ExceptionManagement.exceptions.BussinessException;
-import com.yagizers.rentACar.constants.ExceptionMessages;
+import com.yagizers.rentACar.common.constants.ExceptionMessages;
 import com.yagizers.rentACar.dataAccess.Abstracts.CarRepository;
 import lombok.AllArgsConstructor;
-import org.jboss.logging.Messages;
 import org.springframework.stereotype.Service;
 
 @AllArgsConstructor

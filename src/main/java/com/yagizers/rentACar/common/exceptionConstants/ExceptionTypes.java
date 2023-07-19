@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.ExceptionManagement.CommonExceptions.exceptionConstants;
+package com.yagizers.rentACar.common.exceptionConstants;
 
 public class ExceptionTypes {
     public static class Exception

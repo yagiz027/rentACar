@@ -1,4 +1,4 @@
-package com.yagizers.rentACar.constants;
+package com.yagizers.rentACar.common.constants;
 
 public class ExceptionTypes {
     public static final String Validation = "VALIDATION_EXCEPTION";
