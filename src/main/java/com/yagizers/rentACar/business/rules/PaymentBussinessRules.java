@@ -1,8 +1,8 @@
 package com.yagizers.rentACar.business.rules;
 
 import com.yagizers.rentACar.ExceptionManagement.exceptions.BussinessException;
-import com.yagizers.rentACar.business.dtos.requests.create.CreatePaymentRequest;
 import com.yagizers.rentACar.common.constants.ExceptionMessages;
+import com.yagizers.rentACar.common.dto.CreateRentalPaymentRequest;
 import com.yagizers.rentACar.dataAccess.Abstracts.PaymentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 public class PaymentBussinessRules {
     private PaymentRepository paymentRepository;
 
-    public void checkPaymentIsValid(CreatePaymentRequest request){
+    public void checkPaymentIsValid(CreateRentalPaymentRequest request){
         if (!paymentRepository.existsByCardNumberAndCardHolderAndCardExpirationYearAndCardExpirationMonthAndCardCVV(
-                request.getCardNumber(),request.getCardHolder(),request.getCardExpirationYear(),request.getCardExpirationMonth(),request.getCardCVV())){
+                request.getCardNumber(),request.getCardHolder(),request.getCardExpirationYear(),request.getCardExpirationMonth(),request.getCardCvv())){
             throw new BussinessException(ExceptionMessages.Payment.NotValidPayment);
         }
     }

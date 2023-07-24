@@ -7,6 +7,7 @@ import com.yagizers.rentACar.business.dtos.responses.get.GetAllCarResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetCarByPlateResponse;
 import com.yagizers.rentACar.business.dtos.responses.get.GetCarResponse;
 import com.yagizers.rentACar.business.dtos.responses.update.UpdateCarResponse;
+import com.yagizers.rentACar.entities.enums.State;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface CarService {
     List<GetAllCarResponse> selectAllCars();
     GetCarResponse getCarById(int carId);
     GetCarByPlateResponse getCarByPlate(String carPlate);
+    void changeState(int carId, State state);
 }

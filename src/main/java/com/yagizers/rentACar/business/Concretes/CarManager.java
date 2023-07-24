@@ -12,6 +12,7 @@ import com.yagizers.rentACar.business.rules.CarBusinessRules;
 import com.yagizers.rentACar.core.utilities.mappers.ModelMapperService;
 import com.yagizers.rentACar.dataAccess.Abstracts.CarRepository;
 import com.yagizers.rentACar.entities.Car;
+import com.yagizers.rentACar.entities.enums.State;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -74,5 +75,13 @@ public class CarManager implements CarService {
         this.carBusinessRules.checkIfCarPlateNotExists(carPlate);
         Car car=this.carRepository.findByPlate(carPlate);
         return this.modelMapperService.forResponse().map(car,GetCarByPlateResponse.class);
+    }
+
+    @Override
+    public void changeState(int carId, State state) {
+        this.carBusinessRules.checkIfCarNotExists(carId);
+        Car car=this.carRepository.findById(carId).orElseThrow();
+        car.setState(state);
+        this.carRepository.save(car);
     }
 }

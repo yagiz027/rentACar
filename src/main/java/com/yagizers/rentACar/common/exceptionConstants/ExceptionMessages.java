@@ -23,4 +23,10 @@ public class ExceptionMessages {
     {
         public static final String NotFound = "INVOICE_NOT_FOUND";
     }
+
+    public static class Rental{
+        public static final String NOT_EXISTS="RENTAL_NOT_EXISTS";
+        public static final String NOT_RENTED="CAR_IS_NOT_RENTED";
+        public static final String ALREADY_RENTED="CAR_IS_ALREADY_RENTED";
+    }
 }

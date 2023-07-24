@@ -13,5 +13,6 @@ public class GetCarResponse {
     private double dailyPrice;
     private int modelYear;
     private String state;
-    private int modelId;
+    private String modelName;
+    private String modelBrandName;
 }
