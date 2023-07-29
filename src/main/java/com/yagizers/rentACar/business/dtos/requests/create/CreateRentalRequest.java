@@ -1,10 +1,11 @@
 package com.yagizers.rentACar.business.dtos.requests.create;
 
 import com.yagizers.rentACar.business.dtos.requests.RestrictedPaymentRequest;
-import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor

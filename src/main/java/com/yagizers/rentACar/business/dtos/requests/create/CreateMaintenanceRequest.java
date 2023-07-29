@@ -1,23 +1,15 @@
 package com.yagizers.rentACar.business.dtos.requests.create;
 
-import com.yagizers.rentACar.common.annotations.NotFutureYear;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import lombok.*;
-import org.hibernate.validator.constraints.Length;
-
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
-@Data
 @NoArgsConstructor
+@Getter
+@Setter
 public class CreateMaintenanceRequest {
-    @Length(min = 10,max = 200)
-    @NotNull
-    private String information;
-    private boolean isCompleted;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
     private int carId;
-
+    private String information;
 }

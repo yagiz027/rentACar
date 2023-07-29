@@ -13,8 +13,6 @@ import java.time.LocalDateTime;
 @Setter
 public class UpdateMaintenanceResponse {
     private int id;
-    private String information;
-    private boolean isCompleted;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private int carId;

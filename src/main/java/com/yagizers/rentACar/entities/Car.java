@@ -36,5 +36,8 @@ public class Car {
     @ManyToOne
     @JoinColumn(name="modelId")
     private Model model;
+
+    @OneToMany(mappedBy = "car")
+    private List<Maintenance> maintenances;
 }
 

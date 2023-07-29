@@ -1,12 +1,14 @@
 package com.yagizers.rentACar.business.dtos.requests.create;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class CreateBrandRequest {
     private String brandName;
 }

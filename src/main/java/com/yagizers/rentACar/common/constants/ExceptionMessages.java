@@ -5,6 +5,7 @@ public class ExceptionMessages {
         public static final String NotExists="CAR_NOT_EXISTS";
         public static final String AlreadyExists="CAR_ALREADY_EXISTS";
         public static final String NotAvailable="CAR_NOT_AVAILABLE";
+
     }
 
     public static class Model{
@@ -27,5 +28,13 @@ public class ExceptionMessages {
         public static final String Failed="PAYMENT_FAILED";
         public static final String CardNumberAlreadyExists="CARD_NUMBER_ALREADY_EXISTS";
         public static final String PaymentNotFound="PAYMENT_NOT_FOUND";
+    }
+
+
+    public static class Maintenance{
+        public static final String CarNotFound="CAR_IS_NOT_UNDER_THE_MAINTENANCE";
+        public static final String NotExists="MAINTENANCE_NOT_EXISTS";
+        public static final String NotAvailable="CAR_IS_NOT_AVAILABLE_FOR_MAINTENANCE";
+        public static final String CarIsUnderTheMaintenance="THIS_CAR_IS_CURRENTLY_UNDER_THE_MAINTENANCE";
     }
 }

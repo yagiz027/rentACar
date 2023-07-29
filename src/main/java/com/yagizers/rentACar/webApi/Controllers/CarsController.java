@@ -28,8 +28,8 @@ public class CarsController {
     }
 
     @GetMapping()
-    public List<GetAllCarResponse> selectAllCars(){
-        return this.carService.selectAllCars();
+    public List<GetAllCarResponse> selectAllCars(@RequestParam(defaultValue ="true") boolean includeMaintenance){
+        return this.carService.selectAllCars(includeMaintenance);
     }
     @PutMapping("/{id}")
     public UpdateCarResponse updateCar(@PathVariable int id, @RequestBody UpdateCarRequest updateCarRequest){

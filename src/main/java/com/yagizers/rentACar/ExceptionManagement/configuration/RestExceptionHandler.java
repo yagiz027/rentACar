@@ -1,7 +1,7 @@
 package com.yagizers.rentACar.ExceptionManagement.configuration;
 
 import com.yagizers.rentACar.common.exceptionConstants.ExceptionTypes;
-import com.yagizers.rentACar.ExceptionManagement.exceptions.BussinessException;
+import com.yagizers.rentACar.ExceptionManagement.exceptions.BusinessException;
 import com.yagizers.rentACar.ExceptionManagement.utilsOrResults.ExceptionResult;
 import org.modelmapper.ValidationException;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -35,7 +35,7 @@ public class RestExceptionHandler {
 
      @ExceptionHandler
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY) //422
-    public ExceptionResult<Object> handleValidationException(BussinessException exception){
+    public ExceptionResult<Object> handleValidationException(BusinessException exception){
          return new ExceptionResult<>("",exception.getMessage());
      }
 

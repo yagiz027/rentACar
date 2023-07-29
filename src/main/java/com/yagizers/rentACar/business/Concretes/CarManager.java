@@ -28,7 +28,7 @@ public class CarManager implements CarService {
     @Override
     public CreateCarResponse addCar(CreateCarRequest carRequest) {
         Car car=this.modelMapperService.forRequest().map(carRequest,Car.class);
-
+        car.setId(0);
         this.carRepository.save(car);
 
         CreateCarResponse response=this.modelMapperService.forResponse().map(car,CreateCarResponse.class);
@@ -54,12 +54,18 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public List<GetAllCarResponse> selectAllCars() {
-        List<Car> carList=this.carRepository.findAll();
+    public List<GetAllCarResponse> selectAllCars(boolean includeMaintenance) {
+        List<Car> carList=filterCarsByMaintenanceState(includeMaintenance);
         List<GetAllCarResponse> responses=carList.stream()
                 .map(car->this.modelMapperService.forResponse()
                         .map(car, GetAllCarResponse.class)).toList();
         return responses;
+    }
+    private List<Car> filterCarsByMaintenanceState(boolean includeMaintenance){
+        if(includeMaintenance){
+            return carRepository.findAll();
+        }
+        return carRepository.findAllByStateIsNot(State.MAINTENANCE);
     }
 
     @Override
